@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Spinner from './Spinner';
 import TopBar from './TopBar';
 import BottomNav from './BottomNav';
+import { API_URL } from '../config';
 
 export default function WritePage() {
   const [title, setTitle] = useState('');
@@ -76,7 +77,7 @@ export default function WritePage() {
           } 
         }
       };
-      xhr.open('POST', 'http://127.0.0.1:5000/api/posts');
+      xhr.open('POST', `${API_URL}/api/posts`);
       xhr.setRequestHeader('Authorization', `Bearer ${token}`);
       xhr.send(fd);
     } catch (e) { setLoading(false); showToast('Network error', 'error') }

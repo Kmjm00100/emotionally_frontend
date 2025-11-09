@@ -3,6 +3,7 @@ import TopBar from '../components/TopBar';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../contexts/ToastContext';
 import BottomNav from '../components/BottomNav';
+import { API_URL } from '../config';
 
 export default function ProfileEditPage(){
   const { user, token, login } = useAuth();
@@ -16,7 +17,7 @@ export default function ProfileEditPage(){
     if(!file){ showToast('Select a file','error'); return }
     const fd = new FormData(); fd.append('avatar', file);
     try{
-      const r = await fetch('http://127.0.0.1:5000/api/profile/avatar',{method:'POST',headers:{'Authorization':`Bearer ${token}`},body:fd});
+      const r = await fetch(`${API_URL}/api/profile/avatar`,{method:'POST',headers:{'Authorization':`Bearer ${token}`},body:fd});
       const d = await r.json(); if(r.ok){ showToast('Avatar uploaded','success'); setAvatar(d.avatar); login({ username, token, hearts: user?.hearts || 5, userId: user?.userId }); } else showToast(d.error||'Upload failed','error')
     }catch(e){ showToast('Network error','error') }
   };

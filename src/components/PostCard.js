@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import AIAnalysisCard from './AIAnalysisCard';
+import { API_URL } from '../config';
 
 export default function PostCard({ post }) {
   const date = new Date(post.createdAt).toLocaleString();
   const [i, setI] = useState(0);
   const imgsRaw = post.images || [];
-  const BACKEND_ORIGIN = process.env.REACT_APP_API || 'http://127.0.0.1:5000';
+  const BACKEND_ORIGIN = API_URL;
   const navigate = useNavigate();
 
   // normalize image URLs: allow absolute URLs, or join backend origin with paths like '/uploads/x' or 'uploads/x'
