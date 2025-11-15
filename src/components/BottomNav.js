@@ -14,12 +14,13 @@ export default function BottomNav(){
         </svg>
         <small>Home</small>
       </Link>
-      <Link to="/search" className={loc.pathname==='/search'? 'active':''}>
+      <Link to="/circles" className={loc.pathname.startsWith('/circles')? 'active':''}>
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
+          <circle cx="12" cy="12" r="10"/>
+          <circle cx="12" cy="12" r="6"/>
+          <circle cx="12" cy="12" r="2"/>
         </svg>
-        <small>Search</small>
+        <small>Circles</small>
       </Link>
       <Link to="/write" className={loc.pathname==='/write'? 'active':''}>
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -27,14 +28,12 @@ export default function BottomNav(){
         </svg>
         <small>Write</small>
       </Link>
-      <Link to="/trade" className={loc.pathname==='/trade'? 'active':''}>
+      <Link to="/search" className={loc.pathname==='/search'? 'active':''}>
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="17 1 21 5 17 9"/>
-          <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-          <polyline points="7 23 3 19 7 15"/>
-          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
         </svg>
-        <small>Trade</small>
+        <small>Search</small>
       </Link>
       <Link to="/profile" className={loc.pathname==='/profile'? 'active':''}>
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

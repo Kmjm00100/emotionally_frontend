@@ -10,6 +10,8 @@ import ProfilePage from "./pages/ProfilePage";
 import TradePage from "./pages/TradePage";
 import SearchPage from "./pages/SearchPage";
 import ProfileEditPage from "./pages/ProfileEditPage";
+import CirclesPage from "./pages/CirclesPage";
+import CircleFeedPage from "./pages/CircleFeedPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
@@ -26,6 +28,8 @@ export default function App() {
         <Route path="/profile/edit" element={<ProtectedRoute><ProfileEditPage /></ProtectedRoute>} />
         <Route path="/trade" element={<ProtectedRoute><TradePage /></ProtectedRoute>} />
         <Route path="/search" element={<ProtectedRoute><SearchPage /></ProtectedRoute>} />
+        <Route path="/circles" element={<ProtectedRoute><CirclesPage /></ProtectedRoute>} />
+        <Route path="/circles/:slug" element={<ProtectedRoute><CircleFeedPage /></ProtectedRoute>} />
       </Routes>
     </div>
   );
